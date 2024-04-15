@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,4 +5,38 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String      @id @default(uuid()) @map("id_user")
+  email       String      @unique
+  name        String
+  created_at  DateTime    @default(now())
+  updated_at  DateTime    @default(now())
+  movie_rents MovieRent[] @relation("user_movies")
+
+  @@map("user")
+}
+
+model Movie {
+  id           String      @id @default(uuid()) @map("id_movie")
+  title        String      @unique
+  duration     Int
+  release_date DateTime
+  movie_rents  MovieRent[] @relation("movie_users")
+
+  @@map("movie")
+}
+
+model MovieRent {
+  id        String   @id @default(uuid()) @map("id_rent")
+  user      User     @relation("user_movies", fields: [id_user], references: [id])
+  id_user   String
+  movie     Movie    @relation("movie_users", fields: [id_movie], references: [id])
+  id_movie  String
+  rent_date DateTime @default(now())
+
+  @@index([id_user], name: "idx_id_user")
+  @@index([id_movie], name: "idx_movie_user")
+  @@map("movie_rent")
 }
