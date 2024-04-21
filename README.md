@@ -8,6 +8,7 @@
 
 🇧🇷 Você não fala inglês? [Clique aqui](README.pt.md) para ler a versão em português.
 
+
 ## 🚀 About the Project
 
 This project is a basic simulation of a movie rental system. This project was developed based on the video ["Criando uma API simples em NodeJS usando o Prisma"](https://www.youtube.com/watch?v=NDWV5hHSPBk&t) from the GB Dev channel.

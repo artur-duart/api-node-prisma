@@ -6,7 +6,7 @@
   <img alt="Licença" src="https://img.shields.io/badge/licença-MIT-%2304D361">
 </p>
 
-🇺🇸 Você não fala português? [Clique aqui](README.en.md) para ler a versão em inglês.
+🇺🇸 Do not speak Portuguese? [Click here](README.md) to view the English version.
 
 ## 🚀 Sobre o Projeto
 
