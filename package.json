@@ -1,20 +1,23 @@
 {
-  "name": "api-node-prisma",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "dev": "ts-node-dev --exit-child --ignore-watch node_modules src/server.ts"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.21",
-    "prisma": "^5.12.1",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "@prisma/client": "^5.12.1",
-    "express": "^4.19.2",
-    "express-async-errors": "^3.1.1"
-  }
+	"name": "api-node-prisma",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"dev": "ts-node-dev --exit-child --ignore-watch node_modules src/server.ts",
+		"lint:check": "prettier --check .",
+		"lint:fix": "prettier --write ."
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.21",
+		"prettier": "3.2.5",
+		"prisma": "^5.12.1",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^5.4.5"
+	},
+	"dependencies": {
+		"@prisma/client": "^5.12.1",
+		"express": "^4.19.2",
+		"express-async-errors": "^3.1.1"
+	}
 }
