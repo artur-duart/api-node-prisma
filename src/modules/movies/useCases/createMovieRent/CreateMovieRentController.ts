@@ -1,17 +1,17 @@
-import { Request, Response } from 'express';
-import { CreateMovieRentUseCase } from './CreateMovieRentUseCase';
+import { Request, Response } from "express";
+import { CreateMovieRentUseCase } from "./CreateMovieRentUseCase";
 
 export class CreateMovieRentController {
-	async handle(req: Request, res: Response) {
-		const { movieId, userId } = req.body;
+  async handle(req: Request, res: Response) {
+    const { movieId, userId } = req.body;
 
-		const createMovieRentUseCase = new CreateMovieRentUseCase();
+    const createMovieRentUseCase = new CreateMovieRentUseCase();
 
-		await createMovieRentUseCase.execute({
-			movieId,
-			userId,
-		});
+    await createMovieRentUseCase.execute({
+      movieId,
+      userId,
+    });
 
-		return res.status(201).send();
-	}
+    return res.status(201).send();
+  }
 }
